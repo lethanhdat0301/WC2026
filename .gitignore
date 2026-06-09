@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# WC2026 project local artifacts
+backend/wc2026.db
+backend/.env.*
+!backend/.env.example
+
+# Frontend artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.next/
+frontend/.vite/
+frontend/coverage/
