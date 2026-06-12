@@ -5,7 +5,7 @@ function TeamBadge({ team, size = 'md' }) {
     return null
   }
 
-  const badgeSize = size === 'sm' ? 20 : 24
+  const badgeSize = size === 'sm' ? 16 : 20
   const initials = team.name
     ? team.name
         .trim()
@@ -16,24 +16,25 @@ function TeamBadge({ team, size = 'md' }) {
     : ''
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex min-w-0 items-center gap-3">
       {team.flag_url ? (
         <img
           src={team.flag_url}
           alt={team.name}
-          className="rounded-md object-cover"
+          className="h-5 w-5 rounded-sm ring-1 ring-black/10 object-cover"
           width={badgeSize}
           height={badgeSize}
         />
       ) : (
         <div
-          className="rounded-md bg-gray-200 text-gray-700 flex items-center justify-center font-semibold"
-          style={{ width: badgeSize, height: badgeSize }}
+          className="flex h-5 w-5 items-center justify-center rounded-sm bg-slate-200 text-slate-700 ring-1 ring-black/10 text-xs font-semibold"
         >
           {initials}
         </div>
       )}
-      <span>{team.name}</span>
+      <span className="min-w-0 truncate font-[var(--font-display)] text-sm font-semibold text-slate-900">
+        {team.name}
+      </span>
     </div>
   )
 }
