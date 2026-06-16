@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ink: #0e1726;
+  --color-pitch: #0e9f6e;
+  --color-gold: #f2b705;
+  --color-live: #e11d48;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", ui-sans-serif, sans-serif;
+}
+
+body {
+  background-color: theme("colors.slate.50");
+  color: theme("colors.slate.800");
+  font-family: var(--font-sans);
+}
